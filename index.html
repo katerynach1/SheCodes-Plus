@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="src/index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row header">
+        <div class="col-6">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Type the city" aria-label="Type the city" aria-describedby="button-addon2">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+        </div>
+        <div class="col-6">
+          <button class ="location">Current location</button>
+      </div>
+    </div>
+        <div class="row main">
+      <div class="col-4">
+      <h1>Kyiv, Ukraine</h1>
+      <h2>Sunday, 19:04</h2>
+    </div>
+    <div class="col-3">
+      <p class="degree">24°C</p>
+    </div>
+    <div class="col-3"><img src="media/rain.svg" alt="" width="110px"></div>
+  </div>
+    </div>
+    <div class="row forecast">
+      <div class="col-2">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Mon</h5>
+        <p class="card-text">23°C</p>
+        <img src="media/sun.svg" alt="">
+      </div>
+      </div>
+    </div>
+    <div class="col-2">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Tue</h5>
+        <p class="card-text">20°C</p>
+        <img src="media/clouds.svg" alt="">
+      </div>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Wed</h5>
+          <p class="card-text">19°C</p>
+          <img src="media/rain.svg" alt="" >
+        </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Thu</h5>
+            <p class="card-text">17°C</p>
+            <img src="media/thunderstorm.svg" alt="">
+          </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Fri</h5>
+              <p class="card-text">24°C</p>
+              <img src="media/sunandcloud.svg" alt="">
+            </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Sat</h5>
+                <p class="card-text">26°C</p>
+                <img src="media/sun.svg" alt="">
+              </div>
+              </div>
+            </div>
+  </div>
+  </body>
+</html>
