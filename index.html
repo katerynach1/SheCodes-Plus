@@ -2,97 +2,76 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
-    <link rel="stylesheet" href="src/style.css" />
-    <script src="src/index.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Weather Forecast</title>
   </head>
   <body>
     <div class="container">
-      <div class="row header">
-        <div class="col-6">
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Type the city" aria-label="Type the city" aria-describedby="button-addon2">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-        </div>
-        <div class="col-6">
-          <button class ="location">Current location</button>
-      </div>
-    </div>
-        <div class="row main">
-      <div class="col-4">
-      <h1>Kyiv, Ukraine</h1>
-      <h2>Sunday, 19:04</h2>
-    </div>
-    <div class="col-3">
-      <p class="degree">24°C</p>
-    </div>
-    <div class="col-3"><img src="media/rain.svg" alt="" width="110px"></div>
-  </div>
-    </div>
-    <div class="row forecast">
-      <div class="col-2">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Mon</h5>
-        <p class="card-text">23°C</p>
-        <img src="media/sun.svg" alt="">
-      </div>
-      </div>
-    </div>
-    <div class="col-2">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Tue</h5>
-        <p class="card-text">20°C</p>
-        <img src="media/clouds.svg" alt="">
-      </div>
-      </div>
-    </div>
-    <div class="col-2">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Wed</h5>
-          <p class="card-text">19°C</p>
-          <img src="media/rain.svg" alt="" >
-        </div>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Thu</h5>
-            <p class="card-text">17°C</p>
-            <img src="media/thunderstorm.svg" alt="">
-          </div>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Fri</h5>
-              <p class="card-text">24°C</p>
-              <img src="media/sunandcloud.svg" alt="">
-            </div>
-            </div>
-          </div>
-          <div class="col-2">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Sat</h5>
-                <p class="card-text">26°C</p>
-                <img src="media/sun.svg" alt="">
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Type a city.."
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
               </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-100"
+                />
               </div>
             </div>
-  </div>
-
-  <span>
-    <a href="https://github.com/katerynach1/SheCodes-Plus">Go to GitHub</a>
-  </span>
+          </form>
+          <div class="overview">
+            <h1 id="city"></h1>
+            <ul>
+              <li><span id="date"></span></li>
+              <li id="description"></li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img src="" alt="Clear" id="icon" class="float-left" />
+                <div class="float-left">
+                  <strong id="temperature"></strong
+                  ><span class="units"> °C</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind speed: <span id="wind"></span> km/h</li>
+              </ul>
+            </div>
+          </div>
+          <div class="weather-forecast" id="forecast"></div>
+        </div>
+        <footer>
+          <a href="https://github.com/wecodeschool/vanilla-weather-app"
+            target="_blank">Open-source code</a>
+          by Kateryna Chernovol
+        </footer>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
