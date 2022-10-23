@@ -21,32 +21,32 @@ function formatDay(timestamp) {
   return days[day];
 }
 
-function displayForecast(response) {
-  let forecast = response.data.daily;
+function displayPrediction(response) {
+  let prediction = response.data.daily;
 
-  let forecastElement = document.querySelector("#prediction");
+  let predictionElement = document.querySelector("#prediction");
 
-  let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (forecastDay, index) {
+  let predictionHTML = `<div class="row">`;
+  prediction.forEach(function (predictionDay, index) {
     if (index < 6) {
-      forecastHTML =
-        forecastHTML +
+      predictionHTML =
+      predictionHTML +
         `
       <div class="col-2">
-        <div class="weather-prediction-date">${formatDay(forecastDay.dt)}</div>
+        <div class="weather-prediction-date">${predictionDay(predictionDay.dt)}</div>
         <img
           src="http://openweathermap.org/img/wn/${
-            forecastDay.weather[0].icon
+           predictionDay.weather[0].icon
           }@2x.png"
           alt=""
           width="42"
         />
         <div class="weather-prediction-temperatures">
           <span class="weather-prediction-temperature-max"> ${Math.round(
-            forecastDay.temp.max
+          predictionDay.temp.max
           )}° </span>
           <span class="weather-prediction-temperature-min"> ${Math.round(
-            forecastDay.temp.min
+          predictionDay.temp.min
           )}° </span>
         </div>
       </div>
@@ -54,8 +54,8 @@ function displayForecast(response) {
     }
   });
 
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
+ predictionHTML = predictionHTML + `</div>`;
+ predictionElement.innerHTML = predictionHTML;
 }
 
 function getWeatherForecast(coordinates) {
@@ -130,3 +130,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Kyiv");
+displayPrediction();
